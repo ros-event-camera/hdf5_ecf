@@ -36,7 +36,7 @@ find_package(HDF5 REQUIRED)
 add_library(hdf5_ecf_codec SHARED ecf_codec.cpp)
 
 include(CTest)
-if (BUILD_TESTING)
+if (HDF5_BUILD_TESTS)
     find_package(GTest REQUIRED)
     add_executable(gtest_ecf_codec ecf_codec_test.cpp)
     target_link_libraries(gtest_ecf_codec PRIVATE hdf5_ecf_codec GTest::gtest GTest::gtest_main)
